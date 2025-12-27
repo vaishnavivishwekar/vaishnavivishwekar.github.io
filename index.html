@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <h1>Vaishnavi Vishwekar</h1>
+
+
+            <div class="hero-cta">
+
+                <a class="btn" href="#projects">See my work</a>
+                <a class="btn ghost" href="#contact">Get in touch</a>
+            </div>
+        </div>
+        <!-- hero-media removed: background video and overlay button were removed -->
+
+
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+
+
+        <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">🌙</button>
+    </nav>
+
+    <section id="about">
+        <h2>ABOUT ME</h2>
+        <div class="profile">
+            <div class="avatar">
+                <!-- User photo: replace `photo.jpeg` with your image filename if different -->
+                <img src="my photo.jpeg" alt="Vaishnavi Vishwekar" class="avatar-img" />
+            </div>
+
+            <div class="profile-body">
+                <h3>Vaishnavi Vishwekar</h3>
+                <p class="role">Web Developer • Student </p>
+                <p class="bio">I’m Vaishnavi Vishwekar, a Computer Engineering diploma student with interest in web and application development. I’ve worked on projects involving full-stack development and enjoy learning modern technologies through hands-on practice.
+                </p>
+                <div class="profile-actions">
+                    <a class="btn" href="vaishnavi-Resume 3.pdf" download id="download-cv">View Resume</a>
+
+                    <button class="btn ghost" id="copy-email" data-email="vishwekarvaishnavi@gmail.com"><a href="mailto:vishwekarvaishnavi@gmail.com">Email</a></button>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>SKILLS</h2>
+        <div class="skills-container">
+            <div class="skills-box">
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Web Technologies</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>React</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Database</h3>
+                        <ul>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Concepts</h3>
+                        <ul>
+                            <li>OOP</li>
+                            <li>Operating Systems</li>
+                            <li>Cloud Computing</li>
+                            <li>Cyber Security</li>
+                        </ul>
+
+                    </div>
+
+                    <div class="skill-group">
+                        <h3>Mobile Development</h3>
+                        <ul>
+                            <li>Android (Basics)</li>
+                            <li>XML UI</li>
+                        </ul>
+                    </div>
+
+
+    </section>
+
+    <section id="projects">
+        <h2>MY PROJECTS</h2>
+        <div class="projects">
+            <div class="card">
+
+                <h3>Lost and Found App</h3>
+
+
+                <p>
+                    <ul>
+                        <li>
+                            1.Created an application to post, search, and manage lost and found items.
+                            <br>
+                            <br> 2.Enabled item descriptions, contact details, and easy searching.'
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <a href="https://github.com/vaishnavivishwekar/E-commerce.git">GitHub Repository:</a>
+                    </ul>
+                </p>
+
+            </div>
+
+            <div class="card">
+                <h3>HUL Distribution Agency Management System </h3>
+                <p>
+                    <ul>
+                        <li>1.Built a role-based inventory and order management system for HUL agencies.
+                            <br><br>2.Implemented JWT-based authentication, inventory tracking, and expiry-based auto-discount logic.
+                            <br><br>3.Developed analytics dashboards for revenue, stock alerts, and order insights.</li>
+                    </ul>
+                    <ul>
+                        <a href="https://github.com/vaishnavivishwekar/E-commerce.git">GitHub Repository:</a>
+                    </ul>
+                </p>
+
+            </div>
+
+
+        </div>
+        </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>CONTACT</h2>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p><strong>Email:</strong> <span id="contact-email"><a href="mailto:vishwekarvaishnavi@gmail.com">vishwekarvaishnavi@gmail.com</a></span></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vaishnavi-vishwekar-7b5b5b209/">your-linkedin</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/vaishnavivishwekar">your-github</a></p>
+            </div>
+
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="c-name">Name</label>
+                    <input id="c-name" name="name" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="c-email">Email</label>
+                    <input id="c-email" name="email" type="email" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="c-subject">Subject</label>
+                    <input id="c-subject" name="subject" type="text" />
+                </div>
+
+                <div class="form-group">
+                    <label for="c-message">Message</label>
+                    <textarea id="c-message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Send Message</button>
+                    <button type="button" class="btn ghost" id="form-clear">Clear</button>
+                </div>
+
+                <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2025 Vaishnavi Vishwekar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Settings button -->
+    <button id="settings-btn" class="settings-btn" aria-label="Open settings">⚙️</button>
+
+    <!-- Settings modal -->
+    <div id="settings-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close settings">✕</button>
+            <h3 id="settings-title">Edit Profile & Skills</h3>
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+                <button type="button" id="settings-edit" class="btn ghost">Edit</button>
+            </div>
+            <div id="settings-feedback" class="form-feedback" aria-live="polite" style="margin-bottom:8px;"></div>
+            <form id="settings-form" class="settings-form">
+                <div class="form-group">
+                    <label for="settings-name">Full name</label>
+                    <input id="settings-name" name="name" type="text" />
+                </div>
+
+                <div class="form-group">
+                    <label for="settings-role">Role (display)</label>
+                    <input id="settings-role" name="role" type="text" />
+                </div>
+
+                <div class="form-group">
+                    <label for="settings-email">Contact email</label>
+                    <input id="settings-email" name="email" type="email" />
+                </div>
+
+                <div class="form-group">
+                    <label for="settings-avatar">Avatar filename (in same folder)</label>
+                    <input id="settings-avatar" name="avatar" type="text" />
+                </div>
+
+                <div class="form-group">
+                    <label for="settings-bio">Short bio</label>
+                    <textarea id="settings-bio" name="bio" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="settings-endpoint">Form endpoint (optional)</label>
+                    <input id="settings-endpoint" name="endpoint" type="text" placeholder="https://formspree.io/f/your-id or https://your-api.example.com/submit" />
+                </div>
+
+                <h4>Skills (one per line)</h4>
+                <div class="form-group">
+                    <label for="settings-prog">Programming Languages</label>
+                    <textarea id="settings-prog" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="settings-web">Web Technologies</label>
+                    <textarea id="settings-web" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="settings-db">Database</label>
+                    <textarea id="settings-db" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="settings-mobile">Mobile Development</label>
+                    <textarea id="settings-mobile" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="settings-concepts">Concepts</label>
+                    <textarea id="settings-concepts" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="settings-soft">Soft Skills</label>
+                    <textarea id="settings-soft" rows="4"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Save</button>
+                    <button type="button" class="btn ghost" id="settings-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

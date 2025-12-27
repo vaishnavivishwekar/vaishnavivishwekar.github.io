@@ -1,0 +1,804 @@
+    /* Modern & Attractive Portfolio Styling */
+    
+     :root {
+        --bg: #0f0f0f;
+        --accent: #ff4d6d;
+        --text-light: #ffffff;
+        --text-muted: #cccccc;
+        --card-bg: #1a1a1a;
+        --radius: 16px;
+        --shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    /* Light theme overrides (toggle via body[data-theme="light"]) */
+    
+    body[data-theme="light"] {
+        --bg: #f7f7fb;
+        --accent: #7c3aed;
+        --text-light: #0b0b0b;
+        --text-muted: #4b5563;
+        --card-bg: #ffffff;
+        --shadow: 0 8px 18px rgba(16, 24, 40, 0.05);
+    }
+    
+    body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg);
+        color: var(--text-light);
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    /* Hero */
+    
+    .hero {
+        background: linear-gradient(135deg, rgba(255, 77, 109, 0.12), rgba(174, 0, 255, 0.08));
+        color: var(--text-light);
+    }
+    
+    .hero-inner {
+        padding: 64px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    .lead {
+        font-size: 20px;
+        opacity: 0.95;
+        margin-top: 10px;
+    }
+    
+    #role {
+        font-weight: 700;
+        color: var(--accent);
+        display: inline-block;
+        min-width: 160px;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .hero-cta {
+        margin-top: 18px;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+    }
+    
+    .btn {
+        background: var(--accent);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600
+    }
+    
+    .btn.ghost {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.08)
+    }
+    
+    header h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+    
+    header p {
+        font-size: 18px;
+        opacity: 0.9;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        background: #151515;
+        padding: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: var(--shadow);
+    }
+    
+    .theme-toggle {
+        margin-left: 12px;
+        background: transparent;
+        border: 0;
+        color: var(--text-light);
+        font-size: 18px;
+        cursor: pointer
+    }
+    
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 440px;
+        gap: 28px;
+        align-items: start;
+        max-width: 1000px;
+        margin: auto
+    }
+    
+    .contact-info {
+        background: transparent;
+        padding: 12px
+    }
+    
+    .contact-form {
+        background: var(--card-bg);
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        box-shadow: var(--shadow)
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 12px
+    }
+    
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 6px
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: transparent;
+        color: var(--text-light);
+        font-size: 15px
+    }
+    
+    .form-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center
+    }
+    
+    .form-feedback {
+        margin-top: 12px;
+        color: var(--text-light);
+        opacity: 0.95
+    }
+    
+    .form-feedback.success {
+        color: #7be495
+    }
+    
+    .form-feedback.error {
+        color: #ff8b94
+    }
+    
+    @media (max-width:900px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    nav a {
+        color: var(--text-light);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+    
+    nav a:hover {
+        background: var(--accent);
+        color: #fff;
+    }
+    
+    section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: var(--accent);
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    /* Project Cards */
+    
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    
+    .filters {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 18px
+    }
+    
+    .filter-btn {
+        background: transparent;
+        border: 1px solid #333;
+        color: var(--text-light);
+        padding: 8px 12px;
+        border-radius: 10px;
+        cursor: pointer
+    }
+    
+    .filter-btn.active {
+        background: var(--accent);
+        color: #fff;
+        border-color: transparent
+    }
+    
+    .card {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+    }
+    
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(255, 77, 109, 0.3);
+        border-color: var(--accent);
+    }
+    
+    .card h3 {
+        font-size: 22px;
+        color: var(--accent);
+        margin-bottom: 10px;
+    }
+    
+    .card p {
+        opacity: 0.8;
+    }
+    
+    .card-actions {
+        margin-top: 14px;
+        display: flex;
+        gap: 8px
+    }
+    
+    .view-btn {
+        background: transparent;
+        border: 1px solid #444;
+        color: var(--text-light);
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer
+    }
+    
+    .view-btn:hover {
+        background: var(--accent);
+        color: #fff;
+        border-color: transparent
+    }
+    /* Skills Styling */
+    
+    ul li {
+        font-size: 18px;
+        margin: 8px 0;
+        padding: 8px;
+        background: #181818;
+        display: inline-block;
+        color: var(--text-light);
+        border-radius: 8px;
+        border: 1px solid #333;
+        margin-right: 10px;
+        box-shadow: var(--shadow);
+    }
+    /* Contact */
+    
+    #contact p {
+        font-size: 18px;
+        margin: 8px 0;
+        opacity: 0.9;
+    }
+    
+    footer {
+        background: #151515;
+        color: var(--text-light);
+        text-align: center;
+        padding: 25px;
+        margin-top: 50px;
+        box-shadow: var(--shadow);
+        border-top: 1px solid #333;
+    }
+    /* Modal */
+    
+    .modal {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: rgba(2, 6, 23, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.18s ease
+    }
+    
+    .modal[aria-hidden="false"] {
+        opacity: 1;
+        pointer-events: auto
+    }
+    
+    .modal-content {
+        background: var(--card-bg);
+        color: var(--text-light);
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 680px;
+        width: 90%;
+        box-shadow: var(--shadow);
+        border: 1px solid #333
+    }
+    
+    .modal-close {
+        position: absolute;
+        right: 18px;
+        top: 12px;
+        background: transparent;
+        border: 0;
+        font-size: 26px;
+        color: var(--text-muted);
+        cursor: pointer
+    }
+    /* Responsive tweaks */
+    
+    @media (max-width:600px) {
+        header h1 {
+            font-size: 28px
+        }
+        .hero-inner {
+            padding: 36px 12px
+        }
+    }
+    /* Hero media (video + overlay) */
+    
+    .hero-media {
+        position: relative;
+        margin-top: 18px;
+        border-radius: 12px;
+        overflow: hidden;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto
+    }
+    
+    .hero-media video {
+        width: 100%;
+        height: auto;
+        display: block;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.15));
+    }
+    /* Skills grid and hover interactions (targeted, won't affect other lists) */
+    
+    #skills .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        align-items: start;
+    }
+    
+    #skills .skill-group h3 {
+        font-size: 16px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+    }
+    
+    #skills .skill-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    /* More specific than generic `ul li` above so it only affects skills */
+    
+    #skills .skill-group ul li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        margin: 0;
+        padding: 10px 12px;
+        width: 100%;
+        background: #181818;
+        color: var(--text-light);
+        border-radius: 10px;
+        border: 1px solid #333;
+        box-shadow: var(--shadow);
+        transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    }
+    
+    #skills .skill-group ul li:hover,
+    #skills .skill-group ul li:focus-visible {
+        transform: translateY(-6px) scale(1.02);
+        background: linear-gradient(90deg, rgba(255, 77, 109, 0.12), rgba(174, 0, 255, 0.12));
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+    
+    @media (max-width:600px) {
+        #skills .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .video-play-overlay {
+        position: absolute;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2));
+        color: #fff;
+        font-size: 44px;
+        border: 0;
+        cursor: pointer;
+    }
+    /* Skills container controls width and centering */
+    
+    #skills .skills-container {
+        max-width: 940px;
+        margin: 0 auto;
+        padding: 8px 12px 0 12px;
+    }
+    
+    #skills .skills-box {
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        box-shadow: 0 14px 36px rgba(2, 6, 23, 0.6);
+    }
+    
+    #skills .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        align-items: start;
+    }
+    
+    #skills .skill-group {
+        background: var(--card-bg);
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    
+    #skills .skill-group:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+        border-color: rgba(255, 77, 109, 0.12);
+    }
+    
+    #skills .skill-group h3 {
+        font-size: 16px;
+        color: var(--accent);
+        margin: 0 0 10px 0;
+    }
+    
+    #skills .skill-group ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    /* Skill badges */
+    
+    #skills .skill-group ul li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        padding: 10px 12px;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        color: var(--text-light);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        transition: transform 0.16s ease, background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+    }
+    
+    #skills .skill-group ul li::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        display: inline-block;
+        margin-left: 2px;
+    }
+    
+    #skills .skill-group ul li:hover,
+    #skills .skill-group ul li:focus-visible {
+        transform: translateY(-4px) scale(1.03);
+        background: linear-gradient(90deg, rgba(255, 77, 109, 0.08), rgba(174, 0, 255, 0.06));
+        color: #fff;
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
+    }
+    
+    @media (max-width:900px) {
+        #skills .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width:600px) {
+        #skills .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .profile-body .role {
+        margin: 6px 0;
+        opacity: 0.9
+    }
+    
+    .profile-body .bio {
+        margin-top: 8px;
+        opacity: 0.85
+    }
+    
+    .profile-actions {
+        margin-top: 12px;
+        display: flex;
+        gap: 10px
+    }
+    /* Settings button (corner) */
+    
+    .settings-btn {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: var(--card-bg);
+        color: var(--text-light);
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        font-size: 18px;
+    }
+    /* Reuse modal styles; center settings modal content max-width */
+    
+    .modal-content {
+        max-width: 780px;
+    }
+    /* Make modal content scrollable when tall and style scrollbar */
+    
+    .modal-content {
+        max-height: 80vh;
+        overflow: auto;
+        padding: 20px;
+    }
+    /* Responsive adjustments */
+    
+    @media (max-width: 900px) {
+        nav {
+            gap: 12px;
+            padding: 10px;
+        }
+        .skills-box {
+            padding: 12px;
+        }
+        #skills .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .card {
+            padding: 18px;
+        }
+    }
+    
+    @media (max-width: 720px) {
+        nav {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+        }
+        nav a {
+            display: block;
+            text-align: center;
+            padding: 10px 12px;
+        }
+        header {
+            padding: 30px 12px;
+        }
+        .hero-inner {
+            padding: 28px 12px;
+        }
+        .profile {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding: 0 12px;
+        }
+        .profile .avatar,
+        .avatar-img {
+            width: 112px;
+            height: 112px;
+        }
+        .profile-actions {
+            flex-direction: column;
+            gap: 8px;
+        }
+        .profile-actions .btn {
+            width: 100%;
+        }
+        #skills .skills-grid {
+            grid-template-columns: 1fr;
+        }
+        .settings-btn {
+            right: 12px;
+            bottom: 12px;
+            width: 42px;
+            height: 42px;
+            font-size: 16px;
+        }
+        .modal-content {
+            max-width: 94%;
+            padding: 16px;
+        }
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+    }
+    
+    @media (max-width: 420px) {
+        nav {
+            gap: 8px;
+        }
+        .btn {
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+        .hero-inner h1 {
+            font-size: 24px;
+        }
+        .profile .avatar,
+        .avatar-img {
+            width: 96px;
+            height: 96px;
+        }
+        .settings-btn {
+            width: 38px;
+            height: 38px;
+            right: 10px;
+            bottom: 10px;
+        }
+        .card {
+            padding: 14px;
+        }
+        #skills .skill-group ul li {
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+    }
+    /* WebKit scrollbar */
+    
+    .modal-content::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    .modal-content::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb {
+        background: rgba(255, 77, 109, 0.18);
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+    }
+    /* Firefox */
+    
+    .modal-content {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 77, 109, 0.18) transparent;
+    }
+    
+    .settings-form .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .settings-form label {
+        display: block;
+        margin-bottom: 6px;
+    }
+    
+    .settings-form input,
+    .settings-form textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: transparent;
+        color: var(--text-light);
+    }
+    
+    .settings-form h4 {
+        margin-top: 12px;
+        margin-bottom: 6px;
+        color: var(--accent);
+    }
+    /* Light theme-specific overrides for controls added by the settings UI */
+    
+    body[data-theme="light"] .settings-btn {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 8px 20px rgba(16, 24, 40, 0.06);
+        color: var(--text-light);
+        background: var(--card-bg);
+    }
+    
+    body[data-theme="light"] #skills .skill-group,
+    body[data-theme="light"] .skills-box {
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 10px 26px rgba(16, 24, 40, 0.04);
+    }
+    
+    body[data-theme="light"] .avatar-img {
+        border: 2px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 20px rgba(16, 24, 40, 0.06);
+    }
+    
+    body[data-theme="light"] .modal-content {
+        background: var(--card-bg);
+        color: var(--text-light);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    
+    body[data-theme="light"] .settings-form input,
+    body[data-theme="light"] .settings-form textarea {
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: transparent;
+        color: var(--text-light);
+    }
+    /* Avatar image styling */
+    
+    .profile .avatar img,
+    .avatar-img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 14px;
+        display: block;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+        border: 2px solid rgba(255, 255, 255, 0.04);
+    }
+    
+    @media (max-width:720px) {
+        .profile {
+            grid-template-columns: 1fr;
+            text-align: center
+        }
+        .profile .avatar {
+            margin: auto
+        }
+        .profile-body .bio {
+            margin: 10px 0
+        }
+        .profile-actions {
+            justify-content: center
+        }
+    }
