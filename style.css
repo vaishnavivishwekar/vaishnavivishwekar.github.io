@@ -575,7 +575,7 @@
     .settings-btn {
         position: fixed;
         right: 18px;
-        bottom: 18px;
+        top: 18px;
         width: 46px;
         height: 46px;
         border-radius: 12px;
@@ -657,7 +657,7 @@
         }
         .settings-btn {
             right: 12px;
-            bottom: 12px;
+            top: 12px;
             width: 42px;
             height: 42px;
             font-size: 16px;
@@ -691,7 +691,7 @@
             width: 38px;
             height: 38px;
             right: 10px;
-            bottom: 10px;
+            top: 10px;
             z-index: 10002;
         }
         .card {
