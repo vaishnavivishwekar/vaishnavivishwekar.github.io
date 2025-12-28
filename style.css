@@ -27,6 +27,11 @@
         margin: 0;
         padding: 0;
     }
+    /* Smooth scrolling for in-page navigation */
+    
+    html {
+        scroll-behavior: smooth;
+    }
     
     header {
         text-align: center;
@@ -326,7 +331,8 @@
         background: rgba(2, 6, 23, 0.6);
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.18s ease
+        transition: opacity 0.18s ease;
+        z-index: 10000;
     }
     
     .modal[aria-hidden="false"] {
@@ -581,6 +587,7 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         cursor: pointer;
         font-size: 18px;
+        z-index: 10002;
     }
     /* Reuse modal styles; center settings modal content max-width */
     
@@ -613,10 +620,9 @@
     }
     
     @media (max-width: 720px) {
+        /* Hide the desktop/top nav on small screens and use the bottom mobile nav */
         nav {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 6px;
+            display: none;
         }
         nav a {
             display: block;
@@ -686,6 +692,7 @@
             height: 38px;
             right: 10px;
             bottom: 10px;
+            z-index: 10002;
         }
         .card {
             padding: 14px;
@@ -800,5 +807,39 @@
         }
         .profile-actions {
             justify-content: center
+        }
+    }
+    /* Mobile bottom navbar to prevent content from being overlaid on small screens */
+    
+    .mobile-nav {
+        display: none;
+    }
+    
+    @media (max-width:720px) {
+        .mobile-nav {
+            display: flex;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 56px;
+            background: #151515;
+            border-top: 1px solid #333;
+            z-index: 1000;
+            gap: 8px;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 6px;
+        }
+        body {
+            padding-bottom: 72px;
+            /* make room for mobile nav */
+        }
+        .mobile-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 10px;
+            display: inline-block;
         }
     }
