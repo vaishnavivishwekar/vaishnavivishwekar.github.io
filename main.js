@@ -1,4 +1,4 @@
-// Interactive behaviors for portfolio
+// Interactive behaviors for portfolio// Interactive behaviors for portfolio
 document.addEventListener('DOMContentLoaded', () => {
     // Theme toggle (persisted)
     const themeToggle = document.getElementById('theme-toggle');
@@ -484,4 +484,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     })();
+});
 });
